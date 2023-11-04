@@ -1,0 +1,36 @@
+/*src/styles/questionPageStyles.css*/
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute; /* or fixed if you want it to stay in place on scroll */
+    top: 250px; /* this pushes the container down from the top */
+    left: 50%; /* this starts the centering process horizontally */
+    transform: translateX(-50%); /* this completes the horizontal centering */
+  }
+  
+  .option-button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 5px;
+  }
+  
+  .option-button.selected {
+    background-color: #add8e6;
+    border-color: #000;
+  }
+  
+  .continue-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #add8e6;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+  
