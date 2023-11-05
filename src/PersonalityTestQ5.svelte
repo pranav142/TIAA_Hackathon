@@ -16,6 +16,11 @@
     dispatch('previous'); // Dispatches the 'previous' event to the parent
   }
 
+    function submitAnswers() {
+    // Here you can do something with the selectedOptions if needed
+    dispatch('finish'); // Dispatches an event to signal the completion of the quiz
+  }
+
   const question = "How do you feel about debt? Pick one statement that feels most like your financial style.";
   const options = [
     'I ghost debt like a bad date — if I can\'t pay cash, I\'m out.',
@@ -126,7 +131,7 @@
   <div class="navigation-buttons">
     <button class="back-button" on:click={previousQuestion}>←</button>
     {#if selectedOption} <!-- Check if selectedOption is not null -->
-      <button class="continue-button" on:click={nextQuestion}>→</button>
+      <button class="continue-button" on:click={submitAnswers}>Finish</button>
     {/if}
   </div>
 </div>
