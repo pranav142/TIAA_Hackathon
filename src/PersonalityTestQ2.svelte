@@ -47,6 +47,7 @@
     position: relative;
     top: 0;
     left: 0;
+    color: black;
   }
 
   .question-text {
@@ -55,6 +56,7 @@
     padding: 20px;
     text-align: center;
     line-height: 1.5;
+    color: black;
   }
 
   .option-button {

@@ -7,40 +7,42 @@
   import PersonalityTestQ4 from './PersonalityTestQ4.svelte';
   import PersonalityTestQ5 from './PersonalityTestQ5.svelte';
   import MainPage from './MainPage.svelte';
+  import AvatarCreationPage from './AvatarCreationPage.svelte';
 
   const currentQuestionIndex = writable(-1); // Start with -1 to show login screen first
-  const totalQuestions = 5; // Total questions before showing the main page
+  const avatarCreationPageIndex = 5; // Index representing the avatar creation page
+  const totalQuestions = 4; // Total questions in the personality test
 
   function handleLogin() {
-    currentQuestionIndex.set(0); // Start the test at the first question after login
+	goToMainPage();
+     // Start the test at the first question after login
   }
+
+    function handleCreateAccount() {
+    // Navigates directly to the MainPage after login
+    currentQuestionIndex.set(0);
+  }
+
 
   function goToNextQuestion() {
-    currentQuestionIndex.update(n => {
-      if (n + 1 === totalQuestions) {
-        // If the current question is the last one, move to the main page
-        return n + 1;
-      } else if (n < totalQuestions) {
-        // Otherwise, proceed to the next question
-        return n + 1;
-      } else {
-        return n; // If at the main page already, do nothing
-      }
-    });
+    currentQuestionIndex.update(n => n + 1);
   }
 
-  // New function to move to the previous question
   function goToPreviousQuestion() {
     currentQuestionIndex.update(n => (n > 0 ? n - 1 : n));
   }
 
-   function handleFinish() {
-    currentQuestionIndex.set(totalQuestions); // This sets the index to 5, moving to the main page
+  function handleFinish() {
+    currentQuestionIndex.set(avatarCreationPageIndex); // Move to the avatar creation page
+  }
+
+  function goToMainPage() {
+    currentQuestionIndex.set(avatarCreationPageIndex + 1); // This will render the main page
   }
 </script>
 
 {#if $currentQuestionIndex === -1}
-  <LoginScreen on:login={handleLogin} />
+  <LoginScreen on:login={handleLogin} on:enter={handleCreateAccount}/>
 {:else if $currentQuestionIndex >= 0 && $currentQuestionIndex < totalQuestions}
   {#if $currentQuestionIndex === 0}
     <PersonalityTestQ1 on:next={goToNextQuestion} on:previous={goToPreviousQuestion} />
@@ -50,9 +52,11 @@
     <PersonalityTestQ3 on:next={goToNextQuestion} on:previous={goToPreviousQuestion} />
   {:else if $currentQuestionIndex === 3}
     <PersonalityTestQ4 on:next={goToNextQuestion} on:previous={goToPreviousQuestion} />
-  {:else if $currentQuestionIndex === 4}
-    <PersonalityTestQ5 on:finish={handleFinish} on:previous={goToPreviousQuestion} />
   {/if}
 {:else if $currentQuestionIndex === totalQuestions}
+  <PersonalityTestQ5 on:finish={handleFinish} on:previous={goToPreviousQuestion} />
+{:else if $currentQuestionIndex === avatarCreationPageIndex}
+  <AvatarCreationPage on:finish={goToMainPage} />
+{:else if $currentQuestionIndex === avatarCreationPageIndex + 1}
   <MainPage />
 {/if}
