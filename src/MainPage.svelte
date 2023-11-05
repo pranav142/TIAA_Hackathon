@@ -100,6 +100,14 @@
     text-overflow: ellipses;
   }
 
+  .challenge {
+    margin-top: 20px;
+    font-size: 18px; /* Adjust the font size as necessary */
+    overflow-wrap: break-word;
+    white-space:wrap;
+    /* Add any additional styling as required */
+}
+
  .sidebar-bottom {
   display: flex;
   flex-direction: column;
@@ -307,6 +315,7 @@
     <!-- Sidebar content goes here -->
     <div class="sidebar-top">
         <div>Daily Challenge</div>
+        <div class="challenge">Spend $5 on a fancy dessert or add it to your travel fund?</div>
     </div>
     <div class="sidebar-bottom">
         <div><i class="fas fa-cog" style="color: red"></i> Settings</div>

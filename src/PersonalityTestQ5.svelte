@@ -44,7 +44,7 @@
     position: relative;
     top: 0;
     left: 0;
-    color: black;
+    color: white;
   }
 
   .question-text {
@@ -53,7 +53,7 @@
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    color: black;
+    color: white;
   }
 
   .option-button {
@@ -67,6 +67,8 @@
     transform: translateY(-100px);
     animation: slideIn 0.5s ease forwards;
     animation-delay: var(--animation-delay);
+    background-color:black;
+    color:white;
   }
 
   .option-button:hover {
@@ -87,6 +89,8 @@
     background-color: #fff;
     border-radius: 25px;
     margin-top: 20px;
+    background-color:black;
+    color:white;
   }
 
   .continue-button:hover {
@@ -109,6 +113,8 @@
     background-color: #fff;
     border-radius: 25px;
     margin-top: 20px;
+    background-color:black;
+    color:white;
   }
 
   .back-button:hover, .continue-button:hover {

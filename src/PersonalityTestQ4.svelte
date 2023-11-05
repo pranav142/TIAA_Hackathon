@@ -35,20 +35,20 @@
 </script>
 
 <style>
-  @keyframes slideIn {
+@keyframes slideIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-   .question-container {
+  .question-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
     top: 0;
     left: 0;
-    color: black;
+    color: white;
   }
 
   .question-text {
@@ -57,7 +57,7 @@
     padding: 20px;
     text-align: center;
     line-height: 1.5;
-    color: black;
+    color: white;
   }
 
   .option-button {
@@ -71,6 +71,8 @@
     transform: translateY(-100px);
     animation: slideIn 0.5s ease forwards;
     animation-delay: var(--animation-delay);
+    background-color:black;
+    color:white;
   }
 
   .option-button:hover {
@@ -87,10 +89,13 @@
   .continue-button {
     padding: 10px 20px;
     font-size: 20px;
-    cursor: pointer;
     background-color: #fff;
+    cursor: pointer;
     border-radius: 25px;
     margin-top: 20px;
+    background-color:black;
+    color:white;
+    border:none;
   }
 
   .continue-button:hover {
@@ -99,23 +104,33 @@
     transition: background-color 0.125s, color 0.125s;
   }
 
-  .navigation-buttons {
-    display: flex;
-    justify-content: space-between;
-    width: 50%; /* Adjust width as needed */
-    margin: 20px auto; /* Centers the buttons with auto margins */
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  .back-button, .continue-button {
+  .navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+
+
+  .back-button {
     padding: 10px 20px;
     font-size: 20px;
     cursor: pointer;
     background-color: #fff;
     border-radius: 25px;
     margin-top: 20px;
+    background-color:black;
+    color:white;
+    border:none;
   }
 
-  .back-button:hover, .continue-button:hover {
+  .back-button:hover {
     color: white;
     background-color: rgb(100,0,100);
     transition: background-color 0.125s, color 0.125s;

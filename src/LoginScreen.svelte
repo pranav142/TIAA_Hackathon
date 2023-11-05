@@ -23,22 +23,26 @@
 
 .title {
   position: absolute;
-  top: 100px; /* Keep the title 100px from the top */
+  top: 10px; /* Keep the title 100px from the top */
   left: 50%; /* Center the title horizontally */
   transform: translateX(-50%); /* Shift it back by half its own width */
-  color: black;
+  color: rgb(185, 23, 35);
   font-size: 50px;
   font-weight: bold;
   font-style: italic;
-  background-image: url('/Investify logo png.png'); /* Add your image path here */
-  background-size: cover; /* Cover the entire area of the title */
+  background-image: url('/New Investify Logo.png'); /* Add your image path here */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  background-size: 520px 200px; /* Make the image as large as possible within the title area without cropping or stretching */
   background-position: center; /* Center the background image */
-  width: 100%; /* You might need to adjust this depending on how you want your image to be displayed */
-  height: 200px; /* Adjust the height as needed */
-  display: block; /* Makes it a block-level element so width and height are applied */
-  text-align: center; /* Centers the text horizontally */
+  width: 700px; /* Set a fixed width for your title area */
+  height: 200px; /* Set a fixed height for your title area */
+  display: flex; /* Use flex to center content within the container */
+  justify-content: center; /* Center the text horizontally */
+  align-items: center; /* Center the text vertically */
+  text-align: center; /* Ensures text inside the title is centered */
   padding: 20px; /* Adjust padding as needed */
 }
+
 
 
 .login-container {
@@ -47,6 +51,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh; /* Use full height of the viewport */
+  color:white;
 }
 
 .login-field {
@@ -54,7 +59,8 @@
 }
 
 .login-field input {
-  color: rgb(0,0,0);
+  background-color:black;
+  color: white;
   padding: 0.5rem;
   font-size: 1rem;
   width: 250px; /* Set the width of the text fields */
@@ -62,13 +68,13 @@
 }
 
 .login-button {
-  color: rgb(100,0,100);
+  background-color: black;
+  color: white;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   margin-bottom: 1rem;
   cursor: pointer;
   border-radius: 20px;
-  border: none;
 }
 
 .login-button:hover {
